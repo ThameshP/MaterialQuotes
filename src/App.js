@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios'; //Used to make a GET request to an API
-import { Card, Text, css, Button, Popover} from "@nextui-org/react";
+import {Tooltip, Card, Text, css, Button, Popover} from "@nextui-org/react";
 
 class App extends React.Component {
     state = {
@@ -37,8 +37,9 @@ class App extends React.Component {
             
         <div className="app">  
             
-
+            
             <div className= "card">
+                 
                 <Card
                     
                     onPress={this.fetchQuotes}
@@ -55,7 +56,9 @@ class App extends React.Component {
                         backgroundColor: 'WhiteSmoke',
                         }}
                  >
+                    
                 <Card.Body >
+                    
                     <Text h4
                         weight= "bold"
                         css={{
@@ -77,9 +80,9 @@ class App extends React.Component {
                     >
                      {this.state.adviceAuthor}
                     </Text>
-
+                        
                 </Card.Body>
-                                        <Popover isBordered disableShadow >
+                        <Popover isBordered disableShadow >
                         <Popover.Trigger>
                         <Button light 
                          onClick={() =>  navigator.clipboard.writeText(this.state.advice)}
@@ -91,6 +94,7 @@ class App extends React.Component {
                         <Text css={{ p: "$10" }}>Quote copied to clipboard!</Text>
                         </Popover.Content>
                         </Popover>
+                        
             </Card>
           
             </div>
