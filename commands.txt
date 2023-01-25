@@ -1,0 +1,10 @@
+npm start -> to start nodemon at localhost:3000
+
+
+
+
+
+
+git add --all
+git commit -m "message"  -> to add, commit, and push to repository
+git push origin main

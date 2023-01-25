@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios'; //Used to make a GET request to an API
-import { Card, Text, css, Button} from "@nextui-org/react";
+import { Card, Text, css, Button, Popover} from "@nextui-org/react";
 
 class App extends React.Component {
     state = {
@@ -40,12 +40,13 @@ class App extends React.Component {
 
             <div className= "card">
                 <Card
+                    
                     onPress={this.fetchQuotes}
                     isPressable
                     isHoverable
                     variant= "bordered"
                     css={{ 
-                        mw: "500px", 
+                        mw: "550px", 
                         marginLeft: 'auto',
                         marginRight: 'auto',
                         marginBottom: 'auto',
@@ -54,7 +55,7 @@ class App extends React.Component {
                         backgroundColor: 'WhiteSmoke',
                         }}
                  >
-                <Card.Body>
+                <Card.Body >
                     <Text h4
                         weight= "bold"
                         css={{
@@ -76,14 +77,22 @@ class App extends React.Component {
                     >
                      {this.state.adviceAuthor}
                     </Text>
+
                 </Card.Body>
+                                        <Popover isBordered disableShadow >
+                        <Popover.Trigger>
+                        <Button light 
+                         onClick={() =>  navigator.clipboard.writeText(this.state.advice)}
+                        >
+                        <Text size="$xs">Clipboard!</Text>
+                        </Button>
+                        </Popover.Trigger>
+                        <Popover.Content>
+                        <Text css={{ p: "$10" }}>Quote copied to clipboard!</Text>
+                        </Popover.Content>
+                        </Popover>
             </Card>
-        <Button light color="primary" auto
-        onClick={() =>  navigator.clipboard.writeText(this.state.advice)}
-        
-        >
-          Copy quote!
-        </Button>           
+          
             </div>
 
 
