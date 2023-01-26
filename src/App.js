@@ -36,18 +36,18 @@ class App extends React.Component {
         return(
             
         <div className="app">  
-            
+            <Text h1 color="white">Material Quotes</Text>
             
             <div className= "card">
                  
-                <Card
+                <Card variant= "flat"
                     
                     onPress={this.fetchQuotes}
                     isPressable
                     isHoverable
-                    variant= "bordered"
+                    
                     css={{ 
-                        mw: "550px", 
+                        mw: "500px", 
                         marginLeft: 'auto',
                         marginRight: 'auto',
                         marginBottom: 'auto',
@@ -57,7 +57,7 @@ class App extends React.Component {
                         }}
                  >
                     
-                <Card.Body >
+                <Card.Body>
                     
                     <Text h4
                         weight= "bold"
@@ -86,12 +86,15 @@ class App extends React.Component {
                         <Popover.Trigger>
                         <Button light 
                          onClick={() =>  navigator.clipboard.writeText(this.state.advice)}
+                         
                         >
-                        <Text size="$xs">Clipboard!</Text>
+                        <Text size="$xs" color= 'grey'
+                        >Clipboard!</Text>
                         </Button>
                         </Popover.Trigger>
                         <Popover.Content>
-                        <Text css={{ p: "$10" }}>Quote copied to clipboard!</Text>
+                        <Text css={{ p: "$10",
+                     }}>Quote copied to clipboard!</Text>
                         </Popover.Content>
                         </Popover>
                         

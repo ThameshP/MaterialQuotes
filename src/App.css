@@ -1,24 +1,24 @@
 #root, html, body {
     height: 100vh;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
-
-
 body{
+    background-image: url("/public/backgroundblur.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    text-align: center;
+}
 
-
+.card {
+    font-family: 'Courier New', Courier, monospace,
 }
 
 .app {
-    height: 100%;
-    background-image: url("/public/background.jpg");
-    
-    background-size: cover;
-    background-position: center;
-    
-    
-    text-align: center;
+
 }
 
 
